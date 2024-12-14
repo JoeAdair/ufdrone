@@ -1,0 +1,44 @@
+{% extends 'ufdrone/base.html' %}
+{% load static %}
+{% block title %}Welcome to UF Drone Sightings{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <!-- Welcome Section -->
+    <h1 class="mt-4" style="color: #39ff14;">Welcome to UF Drone Sightings</h1>
+    <p class="lead mt-3">
+        The ultimate platform for tracking and sharing drone sightings across the United States. 
+        Help us map drone activity by submitting your sightings or exploring reports from others.
+    </p>
+
+    <!-- Add the Image (Smaller) -->
+    <div class="my-4">
+        <img src="{% static 'ufdrone/homepage_image.png' %}" alt="Drones Overhead" class="img-fluid rounded shadow-lg" style="max-width: 75%; height: auto;">
+    </div>
+
+    <!-- Call to Actions -->
+    <div class="mt-5">
+        <a href="/submit/" class="btn btn-neon btn-lg mx-2">Submit a Sighting</a>
+        <a href="/list/" class="btn btn-outline-light btn-lg mx-2">View Sightings</a>
+    </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="container mt-5">
+    <h2 class="text-center" style="color: #39ff14;">Drone Sightings by the Numbers</h2>
+    <div class="row text-center mt-4">
+        <div class="col-md-4">
+            <h3 style="color: #39ff14;">{{ total_sightings }}</h3>
+            <p>Total Sightings Submitted</p>
+        </div>
+        <div class="col-md-4">
+            <h3 style="color: #39ff14;">{{ states_covered }}</h3>
+            <p>States with Reported Drones</p>
+        </div>
+        <div class="col-md-4">
+            <h3 style="color: #39ff14;">{{ recent_sightings }}</h3>
+            <p>New Sightings This Week</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

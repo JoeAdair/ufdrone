@@ -1,0 +1,63 @@
+{% extends 'ufdrone/base.html' %}
+
+{% block title %}Submit Drone Sighting{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Submit a Drone Sighting</h2>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        
+        <!-- Address -->
+        <div class="mb-3">
+            <label for="id_address" class="form-label">Address</label>
+            {{ form.address }}
+        </div>
+
+        <!-- City -->
+        <div class="mb-3">
+            <label for="id_city" class="form-label">City</label>
+            {{ form.city }}
+        </div>
+
+        <!-- State -->
+        <div class="mb-3">
+            <label for="id_state" class="form-label">State</label>
+            {{ form.state }}
+        </div>
+
+        <!-- Latitude -->
+        <div class="mb-3">
+            <label for="id_latitude" class="form-label">Latitude</label>
+            {{ form.latitude }}
+        </div>
+
+        <!-- Longitude -->
+        <div class="mb-3">
+            <label for="id_longitude" class="form-label">Longitude</label>
+            {{ form.longitude }}
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label for="id_description" class="form-label">Description</label>
+            {{ form.description }}
+        </div>
+
+        <!-- Image Link -->
+        <div class="mb-3">
+            <label for="id_image_link" class="form-label">Image Link</label>
+            {{ form.image_link }}
+        </div>
+
+        <!-- Video Link -->
+        <div class="mb-3">
+            <label for="id_video_link" class="form-label">Video Link</label>
+            {{ form.video_link }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-neon">Submit</button>
+    </form>
+</div>
+{% endblock %}
