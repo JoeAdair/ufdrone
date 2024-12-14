@@ -1,0 +1,1 @@
+web: gunicorn ufdrone_project.wsgi
